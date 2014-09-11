@@ -3,7 +3,7 @@ import time
 
 def read():
     start = time.time()
-    fileName = "E://access-demo.log"
+    fileName = "E://access.29.log"
     with open(fileName, "r") as f:
         for line in f:
             m = 1
@@ -13,13 +13,18 @@ def read():
     
 def read2():
     start = time.time()
-    fileName = "E://access-demo.log"
+    fileName = "E://access.29.log"
     with open(fileName, "r") as f:
-        lines = f.readlines(100000)
+        print "begin"
         
-        for line in lines:
-            m = 1
+        while True:
+            lines = f.readlines(100)
             
+            if not lines:
+                break    
+            for line in lines:
+                m = 2 
+    
     end = time.time()
     print end - start
     
